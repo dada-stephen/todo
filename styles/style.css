@@ -4,3 +4,73 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+body {
+  scroll-behavior: smooth;
+}
+
+input {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  /* font-weight: 500; */
+  background-color: transparent;
+  width: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+  font-size: 16px;
+  /* font-weight: 500; */
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.todo-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 30px;
+  background-color: aquamarine;
+  padding-left: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.todo-input-field {
+  flex: 1;
+  padding: 10px;
+}
+
+.todo-input-field:focus {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  width: 100%;
+  max-width: 400px;
+}
+
+.todo-input-button {
+  padding: 16px 50px;
+  border-radius: 40px;
+  background-color: tomato;
+  color: #fff;
+}
+
+.todo-input-button:hover {
+  background-color: tomato;
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
