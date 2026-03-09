@@ -32,3 +32,24 @@ export const removeStorage = (key, clearAll = false) => {
     }
   }
 };
+
+export const onSwitchChange = (checkbox, callback) => {
+  let switchElement = null;
+
+  if (typeof checkbox === "string") {
+    switchElement = document.querySelector(checkbox);
+  } else {
+    switchElement = checkbox;
+  }
+
+  if (
+    !(switchElement instanceof HTMLInputElement) ||
+    switchElement.type !== "checkbox"
+  )
+    return;
+  if (typeof callback !== "function") return;
+
+  switchElement.addEventListener("change", () =>
+    callback(switchElement.checked)
+  );
+};
