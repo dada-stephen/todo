@@ -1,4 +1,4 @@
-import { onSwitchChange } from "./utils/index.js";
+import { onSwitchChange, onDropdownToggle } from "./utils/index.js";
 
 console.log("Hello World");
 
@@ -9,3 +9,11 @@ if (todoSwitch) {
     console.log("Switch checked:", checked);
   });
 }
+
+const actionToggles = document.querySelectorAll(".todo-actions-toggle");
+
+actionToggles.forEach((toggle) => {
+  onDropdownToggle(toggle, (action) => {
+    console.log(`Todo row action: ${action}`);
+  });
+});
