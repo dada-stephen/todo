@@ -72,6 +72,18 @@ export const onDropdownToggle = (button, onAction) => {
 
   toggle.addEventListener("click", (event) => {
     event.stopPropagation();
+
+    // Close any other open todo action menus so only one is open at a time
+    const openMenus = document.querySelectorAll(".todo-actions-menu.is-open");
+    openMenus.forEach((openMenu) => {
+      if (!(openMenu instanceof HTMLElement) || openMenu === menu) return;
+      openMenu.classList.remove("is-open");
+      const btn = openMenu.previousElementSibling;
+      if (btn instanceof HTMLElement) {
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+
     const isOpen = menu.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", String(isOpen));
   });
