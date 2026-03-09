@@ -74,3 +74,57 @@ button {
   transform: scale(1.02);
   transition: all 0.3s ease;
 }
+
+.todo-switch-container {
+  margin-top: 1rem;
+}
+
+.todo-switch-item {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.todo-switch-item input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.todo-switch-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: all 0.4s ease;
+  border-radius: 34px;
+}
+
+.todo-switch-slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: all 0.9s ease;
+  border-radius: 50%;
+}
+
+.todo-switch-item input:checked + .todo-switch-slider {
+  background-color: tomato;
+}
+
+.todo-switch-item input:focus + .todo-switch-slider {
+  box-shadow: 0 0 0 1px tomato;
+}
+
+.todo-switch-item input:checked + .todo-switch-slider::before {
+  transform: translateX(26px);
+}
