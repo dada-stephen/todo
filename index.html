@@ -5,13 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Todo App</title>
 
+    <!-- CSS EXTERNAL LINKS -->
     <link rel="stylesheet" href="styles/variable.css" />
     <link rel="stylesheet" href="styles/style.css" />
 
+    <!-- JAVSCRIPT EXTERNAL FILE LINK -->
     <script type="module" src="scripts/script.js"></script>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <section class="todo-container">
+    <div class="dashboard">
+      <div class="dashboard-sidebar">
+        <div>
+          <h1>My Todo App</h1>
+        </div>
+      </div>
+      <div class="dashboard-main">
+        <div class="dashboard-header">
+          <div>
+            <h2>Overview >></h2>
+          </div>
+          <div class="dashboard-search">
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g
+                  fill="none"
+                  stroke="#03045E"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                >
+                  <circle cx="10" cy="10" r="7" />
+                  <path d="m15 15l6 6" />
+                </g>
+              </svg>
+            </button>
+            <input type="text" placeholder="search for todo" />
+          </div>
+        </div>
+        <div class="grid-container">
+          <div id="card1" class="card">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#90E0EF"
+                  d="M17 2h3a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3V0h2v2h6V0h2zM7 8v2h10V8zm0 4v2h10v-2z"
+                />
+              </svg>
+            </div>
+            <h2>20</h2>
+            <p class="title">Total Todos'</p>
+          </div>
+          <div id="card2" class="card">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#90E0EF"
+                  d="M17 2h3a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3V0h2v2h6V0h2zM7 8v2h10V8zm0 4v2h10v-2z"
+                />
+              </svg>
+            </div>
+            <h2>15</h2>
+            <p class="title">Active</p>
+          </div>
+          <div id="card3" class="card">
+            <div class="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#90E0EF"
+                  d="M17 2h3a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3V0h2v2h6V0h2zM7 8v2h10V8zm0 4v2h10v-2z"
+                />
+              </svg>
+            </div>
+            <h2>5</h2>
+            <p class="title">Completed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <section class="todo-container">
       <div class="todo-input-container">
         <input
           class="todo-input-field"
@@ -41,7 +135,7 @@
           <tbody id="todo-table-body"></tbody>
         </table>
       </div>
-    </section>
+    </section> -->
 
     <button class="fab" id="fab">+</button>
 
