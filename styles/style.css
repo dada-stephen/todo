@@ -242,3 +242,55 @@ button {
   outline: none;
   /* box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2); */
 }
+
+.fab {
+  position: fixed;
+  bottom: 20px; /* Distance from bottom */
+  right: 20px; /* Distance from right */
+  width: 60px;
+  height: 60px;
+  background-color: tomato;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.fab:hover {
+  background-color: tomato;
+  transform: scale(1.05);
+}
+
+.fab:hover {
+  background-color: #e91e63;
+  transform: scale(1.05);
+}
+
+/* ---- FAB Overlay ---- */
+.fab-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  opacity: 0;
+  clip-path: circle(0 at var(--fab-x, 50%) var(--fab-y, 50%));
+  transition:
+    clip-path 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 1.5s ease;
+  z-index: 999;
+}
+
+.fab-overlay.is-open {
+  pointer-events: auto;
+  opacity: 1;
+  clip-path: circle(150vmax at var(--fab-x, 50%) var(--fab-y, 50%));
+}
