@@ -37,7 +37,7 @@ const cards = createTodoListCards("#todo-list-cards", sharedActions);
 const handleAddTodo = (text) => {
   const trimmed = text.trim();
   if (!trimmed) {
-    toast.error("Please enter a todo");
+    // toast.error("Please enter a todo");
     return;
   }
   service.add(trimmed);
