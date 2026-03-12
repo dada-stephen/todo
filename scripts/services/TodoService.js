@@ -4,10 +4,7 @@ const STORAGE_KEY = {
   TODOS: "todos"
 };
 
-const defaultTodos = [
-  { id: 1, text: "Learn JavaScript", completed: false },
-  { id: 2, text: "Build Todo App", completed: true }
-];
+const defaultTodos = [];
 
 const persist = (todos) => saveStorage(STORAGE_KEY.TODOS, todos);
 
@@ -27,7 +24,7 @@ export const createTodoService = () => {
     add: (text) => {
       const trimmed = text.trim();
       if (!trimmed) return false;
-      todos = [...todos, { id: Date.now(), text: trimmed, completed: false }];
+      todos = [{ id: Date.now(), text: trimmed, completed: false }, ...todos];
       persist(todos);
       return true;
     },
