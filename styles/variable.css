@@ -1,0 +1,400 @@
+:root {
+  --color-brand-primary: #014e56; /* midnight-green — main CTA, active states */
+  --color-brand-primary-dark: #004047; /* deep-jungle-green — hover on primary */
+  --color-brand-primary-darker: #012f34; /* sacramento-state-green — pressed / deep bg */
+  --color-brand-primary-darkest: #002529; /* dark-green — sidebars, hero backgrounds */
+
+  --color-brand-accent-coral: #f67e7e; /* light-coral — alerts, badges, highlights */
+  --color-brand-accent-teal: #79c8c7; /* rapture-blue — secondary accent, icons */
+
+  /* Legacy aliases (keep for backward compat) */
+  --midnight-green: var(--color-brand-primary);
+  --deep-jungle-green: var(--color-brand-primary-dark);
+  --sacramento-state-green: var(--color-brand-primary-darker);
+  --dark-green: var(--color-brand-primary-darkest);
+  --light-coral: var(--color-brand-accent-coral);
+  --rapture-blue: var(--color-brand-accent-teal);
+  --white: #ffffff;
+
+  /* ──────────────────────────────────────────────────────────
+     NEUTRAL SCALE
+     Warm-tinted neutrals — pairs with the ocean brand
+  ────────────────────────────────────────────────────────── */
+
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #faf8f6; /* page background */
+  --color-neutral-100: #f7f3f0; /* subtle bg, chips, filter tabs */
+  --color-neutral-200: #ede9e5; /* dividers, card borders */
+  --color-neutral-300: #d9d3cd; /* disabled borders */
+  --color-neutral-400: #b8b0a8; /* placeholder text */
+  --color-neutral-500: #9a9089; /* muted icons */
+  --color-neutral-600: #6d5b4d; /* secondary text */
+  --color-neutral-700: #4e3d32; /* body text */
+  --color-neutral-800: #352719; /* headings */
+  --color-neutral-900: #2e1401; /* high-contrast text */
+
+  /* Legacy aliases */
+  --neutral-0: var(--color-neutral-0);
+  --neutral-100: var(--color-neutral-100);
+  --neutral-600: var(--color-neutral-600);
+  --neutral-900: var(--color-neutral-900);
+
+  /* ──────────────────────────────────────────────────────────
+     SEMANTIC / FUNCTIONAL COLORS
+     Mapped to brand — used for UI meaning
+  ────────────────────────────────────────────────────────── */
+
+  /* Success */
+  --color-success-subtle: #d1fae5;
+  --color-success-light: #6ee7b7;
+  --color-success: #10b981; /* toggle on, checkmarks */
+  --color-success-dark: #059669;
+  --color-success-text: #065f46;
+
+  /* Warning */
+  --color-warning-subtle: #fef9c3;
+  --color-warning-light: #fde68a;
+  --color-warning: #f59e0b;
+  --color-warning-dark: #d97706;
+  --color-warning-text: #78350f;
+
+  /* Error / Danger */
+  --color-error-subtle: #fee2e2;
+  --color-error-light: #fca5a5;
+  --color-error: #ef4444; /* delete buttons, destructive actions */
+  --color-error-dark: #dc2626;
+  --color-error-text: #991b1b;
+
+  /* Info */
+  --color-info-subtle: #dbeafe;
+  --color-info-light: #93c5fd;
+  --color-info: #3b82f6;
+  --color-info-dark: #2563eb;
+  --color-info-text: #1e40af;
+
+  /* ──────────────────────────────────────────────────────────
+     ACCENT PALETTE
+     Extended palette for tags, charts, avatars, etc.
+  ────────────────────────────────────────────────────────── */
+
+  --color-yellow-300: #fde68a;
+  --color-yellow-500: #f8cb46;
+  --color-yellow-700: #b45309;
+
+  --color-blue-200: #c7d9f7;
+  --color-blue-400: #92adeb;
+  --color-blue-600: #5072c7;
+  --color-blue-800: #1e3a8a;
+
+  --color-teal-200: #a7f3d0;
+  --color-teal-400: #47d9c9;
+  --color-teal-600: #0d9488;
+
+  --color-pink-300: #f9a8d4;
+  --color-pink-400: #fc8ae5;
+  --color-pink-500: #f073a3;
+  --color-pink-700: #e11966;
+
+  /* Legacy aliases */
+  --yellow-500: var(--color-yellow-500);
+  --blue-400: var(--color-blue-400);
+  --blue-600: var(--color-blue-600);
+  --teal-400: var(--color-teal-400);
+  --pink-400: var(--color-pink-400);
+  --pink-500: var(--color-pink-500);
+  --pink-700: var(--color-pink-700);
+
+  /* ──────────────────────────────────────────────────────────
+     SURFACE & BACKGROUND
+     Used for layered card/panel backgrounds
+  ────────────────────────────────────────────────────────── */
+
+  --surface-page: var(--color-neutral-50); /* html/body bg */
+  --surface-base: var(--color-neutral-0); /* cards, panels */
+  --surface-raised: var(--color-neutral-0); /* modals, dropdowns */
+  --surface-sunken: var(--color-neutral-100); /* inset areas, filter bars */
+  --surface-overlay: rgba(8, 8, 12, 0.6); /* modal backdrop */
+
+  --surface-brand: var(--color-brand-primary);
+  --surface-brand-dark: var(--color-brand-primary-darkest); /* sidebar */
+
+  --surface-success: var(--color-success-subtle);
+  --surface-warning: var(--color-warning-subtle);
+  --surface-error: var(--color-error-subtle);
+  --surface-info: var(--color-info-subtle);
+
+  /* ──────────────────────────────────────────────────────────
+     TEXT
+     Semantic text roles
+  ────────────────────────────────────────────────────────── */
+
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-700);
+  --text-muted: var(--color-neutral-500);
+  --text-disabled: var(--color-neutral-400);
+  --text-placeholder: var(--color-neutral-400);
+  --text-inverse: var(--color-neutral-0);
+  --text-link: var(--color-brand-primary);
+  --text-link-hover: var(--color-brand-primary-dark);
+  --text-success: var(--color-success-text);
+  --text-warning: var(--color-warning-text);
+  --text-error: var(--color-error-text);
+
+  /* ──────────────────────────────────────────────────────────
+     BORDER
+     Semantic border roles
+  ────────────────────────────────────────────────────────── */
+
+  --border-subtle: var(--color-neutral-200); /* default card borders */
+  --border-default: var(--color-neutral-300); /* inputs, dividers */
+  --border-strong: var(--color-neutral-500); /* focus rings base */
+  --border-brand: var(--color-brand-primary);
+  --border-error: var(--color-error);
+  --border-success: var(--color-success);
+
+  --card-border: var(--border-subtle); /* legacy alias */
+
+  /* ──────────────────────────────────────────────────────────
+     SHADOWS
+     Elevation system — 5 levels
+  ────────────────────────────────────────────────────────── */
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.09), 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 32px 80px rgba(0, 0, 0, 0.16), 0 8px 20px rgba(0, 0, 0, 0.06);
+
+  /* Component-specific */
+  --shadow-card: var(--shadow-lg);
+  --shadow-modal: var(--shadow-xl);
+  --shadow-dropdown: 0 10px 25px rgba(15, 23, 42, 0.12);
+  --shadow-toast: 0 4px 12px rgba(0, 0, 0, 0.35), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-fab: 0 4px 20px rgba(230, 57, 70, 0.45);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(1, 78, 86, 0.25);
+  --focus-ring-error: 0 0 0 3px rgba(239, 68, 68, 0.25);
+  --focus-ring-blue: 0 0 0 3px rgba(146, 173, 235, 0.2);
+
+  /* ──────────────────────────────────────────────────────────
+     BORDER RADIUS
+  ────────────────────────────────────────────────────────── */
+
+  --radius-2: 2px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px; /* buttons, inputs */
+  --radius-10: 10px; /* item cards */
+  --radius-12: 12px; /* tables, panels */
+  --radius-14: 14px; /* icon backgrounds in modals */
+  --radius-16: 16px;
+  --radius-20: 20px; /* modal cards */
+  --radius-full: 999px; /* pills, toggles, FAB */
+  --rounded: 1.5rem; /* large card radius */
+  --rounded-full: 999px;
+
+  /* ──────────────────────────────────────────────────────────
+     SPACING SCALE
+     Rem-based + px spot values
+  ────────────────────────────────────────────────────────── */
+
+  /* Rem scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Semantic aliases */
+  --space-xs: var(--space-2);
+  --space-s: var(--space-4);
+  --space-m: var(--space-6);
+  --space-l: var(--space-8);
+  --space-xl: var(--space-12);
+  --space-2xl: var(--space-16);
+
+  /* Px spot values */
+  --spacing-100: 8px;
+
+  /* ──────────────────────────────────────────────────────────
+     LAYOUT
+  ────────────────────────────────────────────────────────── */
+
+  --container-max: 1080px;
+  --sidebar-width: 260px;
+  --sidebar-collapsed: 72px;
+  --topbar-height: 64px;
+  --fab-size: 56px;
+  --fab-offset: 2rem;
+
+  /* ──────────────────────────────────────────────────────────
+     TYPOGRAPHY — FONT FAMILIES
+  ────────────────────────────────────────────────────────── */
+
+  --font-primary: "Montserrat", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  --font-size-xxsmall: 12px;
+  --font-size-xsmall: 13px;
+  --font-size-small: 14px;
+  --font-size-regular: 16px;
+  --font-size-medium: 18px;
+  --font-size-large: 22px;
+  --font-size-xlarge: 28px;
+  --font-size-display: 40px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.2;
+  --line-height-snug: 1.3;
+  --line-height-regular: 1.4;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
+  /* Legacy */
+  --line-height-medium: var(--line-height-snug);
+  --line-height-large: var(--line-height-regular);
+
+  --letter-spacing-tight: -0.04em;
+  --letter-spacing-snug: -0.02em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.02em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.12em;
+
+  --letter-spacing-small: var(--letter-spacing-snug);
+
+  --duration-fast: 100ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-slower: 450ms;
+  --duration-page: 600ms;
+
+  --ease-default: ease;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-overlay: cubic-bezier(0.21, 1.02, 0.73, 1);
+
+  --transition-base: var(--duration-normal) var(--ease-default);
+  --transition-fast: var(--duration-fast) var(--ease-out);
+  --transition-slow: var(--duration-slow) var(--ease-in-out);
+  --transition-spring: var(--duration-slower) var(--ease-spring);
+
+  /* ──────────────────────────────────────────────────────────
+     Z-INDEX STACK
+  ────────────────────────────────────────────────────────── */
+
+  --z-below: -1;
+  --z-base: 0;
+  --z-raised: 10; /* dropdowns, popovers */
+  --z-overlay: 99; /* FAB overlay */
+  --z-fab: 100; /* floating action button */
+  --z-modal: 200; /* modals */
+  --z-toast: 9999; /* toasts — always on top */
+
+  /* ──────────────────────────────────────────────────────────
+     COMPONENT TOKENS
+     Pre-composed values for specific components
+  ────────────────────────────────────────────────────────── */
+
+  /* --- Sidebar --- */
+  --sidebar-bg: var(--color-brand-primary-darkest);
+  --sidebar-text: var(--color-neutral-0);
+  --sidebar-text-muted: rgba(255, 255, 255, 0.55);
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-item-hover: rgba(255, 255, 255, 0.07);
+  --sidebar-item-active: rgba(121, 200, 199, 0.15);
+  --sidebar-radius: 0px 15px 15px 0px;
+
+  /* --- Cards --- */
+  --card-bg: var(--surface-base);
+  --card-border: var(--border-subtle);
+  --card-radius: var(--radius-12);
+  --card-padding: 20px;
+  --card-shadow: var(--shadow-card);
+
+  --card-brand-bg: linear-gradient(
+    135deg,
+    var(--color-brand-primary),
+    var(--color-brand-primary-dark)
+  );
+  --card-brand-text: var(--color-neutral-0);
+
+  /* --- Buttons (primary) --- */
+  --btn-primary-bg: var(--color-brand-primary);
+  --btn-primary-bg-hover: var(--color-brand-primary-dark);
+  --btn-primary-text: var(--color-neutral-0);
+  --btn-primary-radius: var(--radius-8);
+  --btn-primary-padding: 8px 16px;
+
+  /* --- Buttons (danger) --- */
+  --btn-danger-bg: #e63946;
+  --btn-danger-bg-hover: #d62b38;
+  --btn-danger-text: var(--color-neutral-0);
+  --btn-danger-shadow: 0 4px 20px rgba(230, 57, 70, 0.45);
+
+  /* --- Inputs --- */
+  --input-bg: var(--surface-base);
+  --input-border: var(--border-default);
+  --input-border-focus: var(--color-blue-400);
+  --input-text: var(--text-primary);
+  --input-placeholder: var(--text-placeholder);
+  --input-radius: var(--radius-8);
+  --input-padding: 10px 14px;
+  --input-font-size: var(--font-size-small);
+  --input-shadow-focus: var(--focus-ring-blue);
+
+  /* --- Toasts --- */
+  --toast-bg: #1c1c1e;
+  --toast-border: rgba(255, 255, 255, 0.08);
+  --toast-text: #e8e8ea;
+  --toast-text-muted: rgba(235, 235, 245, 0.55);
+  --toast-radius: 10px;
+  --toast-shadow: var(--shadow-toast);
+
+  /* --- Modal / Confirm dialog --- */
+  --modal-bg: var(--surface-raised);
+  --modal-radius: var(--radius-20);
+  --modal-shadow: var(--shadow-modal);
+  --modal-backdrop: var(--surface-overlay);
+
+  /* --- Todo item cards --- */
+  --item-card-bg: var(--surface-base);
+  --item-card-border: var(--border-subtle);
+  --item-card-bg-hover: #f9fafb;
+  --item-card-radius: var(--radius-10);
+  --item-card-padding: 10px 12px;
+
+  /* --- Toggle / Switch --- */
+  --toggle-track-off: #d1d5db;
+  --toggle-track-on: var(--color-success);
+  --toggle-thumb: var(--color-neutral-0);
+  --toggle-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --toggle-focus: 0 0 0 2px rgba(16, 185, 129, 0.35);
+
+  /* --- Filter tabs --- */
+  --filter-bg: var(--surface-sunken);
+  --filter-radius: var(--radius-8);
+  --filter-btn-active-bg: var(--surface-base);
+  --filter-btn-active-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+
+  /* --- Search bar --- */
+  --search-bg: var(--surface-base);
+  --search-border: var(--border-subtle);
+  --search-border-focus: var(--color-blue-400);
+  --search-shadow-focus: var(--focus-ring-blue);
+  --search-icon-color: var(--text-muted);
+}

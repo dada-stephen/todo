@@ -1,11 +1,240 @@
-<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Todo App</title>
-    </head>
-    <body>
-        
-    </body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Todo App</title>
+
+    <!-- CSS EXTERNAL LINKS -->
+    <link rel="stylesheet" href="styles/variable.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <!-- JAVSCRIPT EXTERNAL FILE LINK -->
+    <script type="module" src="scripts/script.js"></script>
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="dashboard-container">
+        <div class="dashboard">
+          <!-- <div class="dashboard-sidebar">
+        <div>
+          <h1>My Todo App</h1>
+        </div>
+      </div> -->
+          <div class="dashboard-main">
+            <div class="dashboard-header">
+              <p class="greetings">Hi Gift Blessing</p>
+              <p>Welcome to your daily task tracker.</p>
+            </div>
+            <div class="grid-container">
+              <div id="card1" class="card">
+                <div class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="#90E0EF"
+                      d="M17 2h3a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3V0h2v2h6V0h2zM7 8v2h10V8zm0 4v2h10v-2z"
+                    />
+                  </svg>
+                </div>
+                <h2 id="total-count">0</h2>
+                <p class="title">Total Todos</p>
+              </div>
+              <div id="card2" class="card">
+                <div class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="#90E0EF"
+                      d="M17 2h3a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3V0h2v2h6V0h2zM7 8v2h10V8zm0 4v2h10v-2z"
+                    />
+                  </svg>
+                </div>
+                <h2 id="active-count">0</h2>
+                <p class="title">Active</p>
+              </div>
+              <div id="card3" class="card">
+                <div class="icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="#90E0EF"
+                      d="M17 2h3a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h3V0h2v2h6V0h2zM7 8v2h10V8zm0 4v2h10v-2z"
+                    />
+                  </svg>
+                </div>
+                <h2 id="completed-count">0</h2>
+                <p class="title">Completed</p>
+              </div>
+            </div>
+          </div>
+
+          <section class="todo-recent" id="todo-recent">
+            <h3 class="todo-recent__title">Recent</h3>
+            <p class="todo-recent__subtitle">Latest active tasks</p>
+            <div class="todo-add-new-container">
+              <button
+                type="button"
+                class="todo-add-new"
+                aria-label="Add new todo"
+              >
+                + Add new
+              </button>
+            </div>
+            <div id="todo-recent-cards" class="todo-list-cards"></div>
+            <button type="button" class="todo-view-all" id="todo-view-all">
+              View all
+            </button>
+          </section>
+
+          <section class="todo-full-list" id="todo-full-list" hidden>
+            <div class="todo-full-list__header">
+              <button
+                type="button"
+                class="todo-back-recent"
+                id="todo-back-recent"
+                aria-label="Back to recent"
+              >
+                ← Recent
+              </button>
+            </div>
+            <div class="todo-toolbar">
+              <div class="todo-search" role="search">
+                <span class="todo-search__icon" aria-hidden="true">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                  </svg>
+                </span>
+                <input
+                  id="todo-search"
+                  type="search"
+                  placeholder="Search todos…"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="todo-filter" role="tablist" aria-label="Filter todos">
+                <button
+                  type="button"
+                  class="todo-filter__btn is-active"
+                  data-filter="all"
+                  role="tab"
+                  aria-selected="true"
+                >
+                  All
+                </button>
+                <button
+                  type="button"
+                  class="todo-filter__btn"
+                  data-filter="active"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Active
+                </button>
+                <button
+                  type="button"
+                  class="todo-filter__btn"
+                  data-filter="completed"
+                  role="tab"
+                  aria-selected="false"
+                >
+                  Completed
+                </button>
+              </div>
+            </div>
+            <div class="todo-add-new-container">
+              <button
+                type="button"
+                class="todo-add-new"
+                aria-label="Add new todo"
+              >
+                + Add new
+              </button>
+            </div>
+            <div id="todo-list-cards" class="todo-list-cards"></div>
+          </section>
+        </div>
+        <!-- <section class="todo-container">
+      <div class="todo-input-container">
+        <input
+          class="todo-input-field"
+          type="text"
+          placeholder="Add a new todo"
+        />
+        <button class="todo-input-button">Add</button>
+      </div>
+
+      <div class="todo-switch-container">
+        <label for="todo-switch" class="todo-switch-item">
+          <input type="checkbox" id="todo-switch" />
+          <span class="todo-switch-slider"></span>
+        </label>
+      </div>
+
+      <div class="todo-table-container">
+        <table class="todo-table">
+          <thead>
+            <tr>
+              <th>S/N</th>
+              <th>Task</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="todo-table-body"></tbody>
+        </table>
+      </div>
+    </section> -->
+
+        <div class="fab-overlay" id="overlay" aria-hidden="true">
+          <div class="overlay-content">
+            <!-- <h2>Add a new todo</h2>
+            <p>Type your task and hit add</p> -->
+
+            <div class="todo-input-container todo-input-container--overlay">
+              <input
+                class="todo-input-field"
+                type="text"
+                placeholder="Add a new todo"
+              />
+              <button class="todo-input-button">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="fab" id="fab" aria-label="Open menu">
+          <span class="fab-icon"></span>
+        </button>
+      </section>
+    </main>
+  </body>
 </html>
