@@ -1,0 +1,56 @@
+import { saveStorage, loadStorage } from "../utils/index.js";
+
+const STORAGE_KEY = {
+  TODOS: "todos"
+};
+
+const defaultTodos = [];
+
+const persist = (todos) => saveStorage(STORAGE_KEY.TODOS, todos);
+
+export const createTodoService = () => {
+  let todos = loadStorage(STORAGE_KEY.TODOS);
+
+  if (!Array.isArray(todos) || todos.length === 0) {
+    todos = defaultTodos;
+    persist(todos);
+  }
+
+  return {
+    getAll: () => todos,
+
+    getCompleted: () => todos.filter((todo) => todo.completed),
+
+    add: (text) => {
+      const trimmed = text.trim();
+      if (!trimmed) return false;
+      todos = [{ id: Date.now(), text: trimmed, completed: false }, ...todos];
+      persist(todos);
+      return true;
+    },
+
+    update: (id, text) => {
+      const trimmed = text.trim();
+      if (!trimmed) return false;
+      todos = todos.map((todo) =>
+        todo.id === id ? { ...todo, text: trimmed } : todo
+      );
+      persist(todos);
+      return true;
+    },
+
+    setCompleted: (id, completed) => {
+      todos = todos.map((todo) =>
+        todo.id === id ? { ...todo, completed } : todo
+      );
+      persist(todos);
+      return true;
+    },
+
+    delete: (id) => {
+      todos = todos.filter((todo) => todo.id !== id);
+      persist(todos);
+      return true;
+    }
+  };
+};
